@@ -176,10 +176,10 @@ function getSearchEngineURL() {
 function getAboutBlank() {
     if (localStorage.getItem('aboutBlank') === 'on') {
         var introText = document.getElementById("introText");
-        introText.innerHTML = "<b>Elixir:</b><br>Search the web without censorship or tracking.</a>"
+        introText.innerHTML = "<b>Helpster:</b><br>Math is important everywhere!</a>"
 
         var searchPlaceholder = document.querySelector("input");
-        searchPlaceholder.placeholder = "Search here without tracking";
+        searchPlaceholder.placeholder = "Search here";
 
         return 'on';
     } else {
@@ -319,7 +319,7 @@ function setupCloak() {
         changeFavicon(localStorage.getItem('cloakFavicon'));
     }
     if (localStorage.getItem('cloakTitle') == null && localStorage.getItem('cloakFavicon') == null) {
-        document.title = 'Elixir - Blazingly Fast Math Help!';
+        document.title = 'Helpster - Blazingly Fast Math Help!';
         changeFavicon('favicon.ico');
     }
 }

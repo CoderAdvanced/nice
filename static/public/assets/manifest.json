@@ -1,6 +1,6 @@
 {
-"name": "Elixir",
-"short_name": "Elixir - Instant Math Help",
+"name": "Helpster",
+"short_name": "Helpster - Instant Math Help",
 "start_url": "/",
 "scope": "/",
 "display": "standalone",

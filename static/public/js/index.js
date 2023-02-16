@@ -208,7 +208,6 @@ function openAboutBlank(url) {
       var encoded_url = url;
     }
     var w = open('about:blank', '_blank') || alert("It seems like you are blocking pop-ups. Please try again once you have allowed pop-ups.")
-      w.document.title = "Dashboard";
       w.document.write(`<iframe style="height: 100%; width: 100%; border: none;" src="${encoded_url}" allowfullscreen></iframe>`)
       w.document.body.style.margin = '0'
     window.location.replace(getSearchEngineURL()); 

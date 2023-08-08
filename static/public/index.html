@@ -24,6 +24,8 @@
                 accessGranted = true;
             } else {
                 alert("Incorrect username or password. Access denied.");
+                // Reload the page to clear the message in case of incorrect input
+                location.reload();
             }
         }
 

@@ -16,16 +16,19 @@
         let accessGranted = false;
 
         function showLoginPopup() {
-            const enteredUsername = prompt("Enter your username:");
-            const enteredPassword = prompt("Enter your password:");
+            const enteredUsername = prompt("Enter your username and password in the format username:password");
 
-            // Replace 'your-username' and 'your-password' with the actual username and password
-            if (enteredUsername === "your-username" && enteredPassword === "your-password") {
-                accessGranted = true;
+            if (enteredUsername) {
+                const credentials = enteredUsername.split(':');
+                // Replace 'your-username' and 'your-password' with the actual username and password
+                if (credentials[0] === "your-username" && credentials[1] === "your-password") {
+                    accessGranted = true;
+                } else {
+                    alert("Incorrect username or password. Access denied.");
+                }
             } else {
-                alert("Incorrect username or password. Access denied.");
-                // Reload the page to clear the message in case of incorrect input
-                location.reload();
+                // User clicked cancel or entered an empty input
+                document.body.style.display = "none";
             }
         }
 

@@ -12,7 +12,30 @@
     <link rel="manifest" href="./assets/manifest.json">
   </head>
   <body id="main" class="h-full min-h-full bg-gray-700">
+    <script>
+        let accessGranted = false;
 
+        function showLoginPopup() {
+            const enteredUsername = prompt("Enter your username:");
+            const enteredPassword = prompt("Enter your password:");
+
+            // Replace 'your-username' and 'your-password' with the actual username and password
+            if (enteredUsername === "your-username" && enteredPassword === "your-password") {
+                accessGranted = true;
+                window.location.href = '/os.html';
+            } else {
+                alert("Incorrect username or password. Access denied.");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showLoginPopup();
+            
+            if (!accessGranted) {
+                document.body.style.display = "none";
+            }
+        });
+    </script>
     <!-- tips and tricks / announcement -->
     <div id="announcement" class="hidden absolute w-full pt-5 pr-5">
       <!-- pop up showing help information -->

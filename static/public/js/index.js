@@ -201,52 +201,16 @@ function setAboutBlank() {
 
 // opens page in about:blank
 function openAboutBlank(url) {
-  if (url === undefined) {
-    var encoded_url = window.location.origin;
-  } else {
-    var encoded_url = url;
-  }
-
-  // Open a new window or tab
-  var w = window.open('about:blank', '_blank');
-  
-  // Check if pop-up was blocked
-  if (!w) {
-    alert("It seems like you are blocking pop-ups. Please try again once you have allowed pop-ups.");
-    return;
-  }
-
-  // Set the tab name
-  w.document.title = "My Drive - Google Drive";
-
-  // Set the tab icon
-  var link = w.document.querySelector('link[rel="icon"]');
-  if (link) {
-    link.href = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
-  } else {
-    link = w.document.createElement('link');
-    link.rel = 'icon';
-    link.href = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
-    w.document.head.appendChild(link);
-  }
-
-  // Load the URL in an iframe
-  w.document.write(`<iframe style="height: 100%; width: 100%; border: none;" src="${encoded_url}" allowfullscreen></iframe>`);
-  w.document.body.style.margin = '0';
-
-  // Redirect the current window to another URL (if needed)
-  window.location.replace(getSearchEngineURL());
-}
-
-// end of about:blank functions
-
-// changes the selected icon
-function selectedIcon(icon) {
-    const icons = document.querySelectorAll(`[id^="icon"]`);
-    icons.forEach(element =>{
-        element.classList.remove('sidebar-icon-selected');
-    });
-    document.getElementById(icon).classList.toggle('sidebar-icon-selected')
+    if (url === undefined) {
+      var encoded_url = window.location.origin;
+    }
+    else {
+      var encoded_url = url;
+    }
+    var w = open('about:blank', '_blank') || alert("It seems like you are blocking pop-ups. Please try again once you have allowed pop-ups.")
+      w.document.write(`<iframe style="height: 100%; width: 100%; border: none;" src="${encoded_url}" allowfullscreen></iframe>`)
+      w.document.body.style.margin = '0'
+    window.location.replace(getSearchEngineURL()); 
 }
 
 // opens a certain page using css and hides the others

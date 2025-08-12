@@ -6,5 +6,6 @@ self.__uv$config = {
     handler: '/js/uv/uv.handler.js',
     bundle: '/js/uv/uv.bundle.js',
     config: '/js/uv/uv.config.js',
+    index: '/js/uv/uv.index.js',
     sw: '/js/uv/uv.sw.js',
 };
